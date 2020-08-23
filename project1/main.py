@@ -26,5 +26,11 @@ def recommend(typo):
 
 phrase = input('Welcome to simple explanatory dictionary, containing 49537 terms!\n'
                'Please, enter term to search:\t')
-
-print(get_term(phrase))
+n = 1
+output = get_term(phrase)
+if isinstance(output, list):
+    for item in output:
+        print(f'{n}) {item}')
+        n += 1
+else:
+    print(output)
