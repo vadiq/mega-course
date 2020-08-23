@@ -8,6 +8,8 @@ def get_term(term):
     term = term.lower()
     if term in data:
         return data[term]
+    elif term.title() in data:
+        return data[term.title()]
     elif len(get_close_matches(term, data.keys(), cutoff=0.6)) > 0:
         return recommend(term)
     else:
